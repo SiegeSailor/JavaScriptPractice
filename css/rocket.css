@@ -1,0 +1,26 @@
+html{
+    height: 100%;
+    
+}
+body{
+    background-image: url('../img/map.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: bottom ;
+}
+.rocket{
+    position: absolute;
+    bottom: 0;
+    transition: all 1s cubic-bezier(1, 0.08, 0, 1.19);
+    /* cubic-bezier 表示貝茲曲線，chrome 裡可以直接手動調整、取得數字 */
+    /*ease、linear、ease-in、ease-out、ease-in-out*/
+}
+.rocket-1{
+    left: 30px;
+}
+.rocket-2{
+    left: 330px;
+}
+.rocket-3{
+    left: 630px;
+}

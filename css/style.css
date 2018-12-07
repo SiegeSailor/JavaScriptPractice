@@ -1,0 +1,84 @@
+.yahooclasstest {
+    color:red;
+}
+
+#yahooidtest {
+    font-style: italic;
+}
+
+.createlementtest {
+    color:darkblue;
+}
+
+.outter {
+    position: relative;
+    background-color: brown;
+    height: 100px;
+    width:100px;
+}
+
+.inner {
+    position: absolute;
+    background-color:yellow;
+    height: 50px;
+    width: 50px;
+}
+
+.relative {
+    position: relative;
+}
+
+.frame {
+    width:450px;
+    height:250px;
+    border:1px solid blue;
+}
+
+.box{
+    background: green;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+  }
+  .box1{
+    top: 0px;
+    left: 50px;
+    animation: fontbulger 2s infinite;
+  }
+  .box2{
+    top: 0px;
+    left: 90px;
+    animation: fontbulger 3s infinite;
+  }
+  .box3{
+    top: 0px;
+    left: 140px;
+    animation: fontbulger 2.5s infinite;
+  }
+  .box4{
+    top: 0px;
+    left: 180px;
+    animation: fontbulger 1.2s infinite;
+  }
+  .box5{
+    top: 0px;
+    left: 230px;
+    animation: fontbulger 4s infinite;
+  }
+  .box6{
+    top: 0px;
+    left: 250px;
+    animation: fontbulger 4s infinite;
+  }
+  @keyframes fontbulger {
+    0% {
+      top: 20px;
+    }
+    30% {
+      top: 150px;
+    }
+    100% {
+      top: 20px;
+    }
+  }
+  
