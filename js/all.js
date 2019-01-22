@@ -97,6 +97,7 @@ console.log(tom);
 // 1 因為該變數為第一個被呼叫的函式所有，再加上 function 的 hoisting 特性，因此在"跑過一次"後，
 // 最終的值回到一開始被呼叫的函式。但實質上，最終值並沒有"回傳"到一開始的函式，只是方便理解ㄋ →
 // 0 回到呼叫式上、帶入數字。
+
 // 1 號
 function count(price) {
     // 2 號
@@ -876,3 +877,58 @@ document.querySelector('#open').onclick = function () {
 }
 console.log('現在顯示內容的高度'+window.innerHeight);
 console.log('整個瀏覽器的高度'+window.outterHeight);
+
+
+//
+// AJAX
+//
+// 產生要求
+var xhr = new XMLHttpRequest();
+// 常見相關屬性：readystate
+// 0 - 已建立要求，但未呼叫 open(); 使用。
+// 1 - open() 方法已被呼叫。
+// 2 - send() 方法已被呼叫，而且可取得 header 與狀態。
+// 3 - 回應資料下載中，此時 responseText 會擁有部分資料。
+// 4 - 完成下載操作。
+
+// onreadystatechange - 每次 readystate 改變，都會觸發此函數
+
+// 常見相關屬性：status
+// 200 - ok
+// 404 - 未找到頁面
+
+// 格式、要讀取的資料、同步或非同步
+// 格式：get ( 讀取資料 )、post ( 傳送資料到伺服器 )
+// 同步或非同步： true，非同步，不會等資料傳回來、就讓程式繼續往下跑，等到回傳才自動回傳
+xhr.open('get','https://hexschool.github.io/ajaxHomework/data.json',true);
+
+// 傳送要求，因為這邊不是 post、沒有要傳送資料過去，所以用 null 空值
+xhr.send(null);
+
+// 無值，因為非同步的關係、這一行執行的時候資料還沒載入
+console.log(xhr.responseText);
+
+// 確認資料回傳後才執行
+xhr.onload = function(){
+    console.log(xhr.responseText);
+
+    // 處理 JSON 格式，使用 JSON.parse(); 將字串變為該格式的物件，如集合等等。
+    var string = JSON.parse(xhr.responseText);
+    document.querySelector('.showjson').textContent = string[0].name;
+}
+
+// 加上 if - status 確認資料是否有抓到
+xhr.onload = function(){
+    if (xhr.status == 200) {
+        var string = JSON.parse(xhr.responseText);
+        document.querySelector('.showjson').textContent = string[0].name;
+    } else {
+        console.log("資料錯誤！");
+    }
+}
+
+
+//
+// CORS: Cross-Origin Resource Sharing
+//
+// 開啟與否：是否可以跨網域撈取資料
