@@ -76,3 +76,13 @@ console.log(window.letE);
 const constE = 10;
 console.log(constE);
 console.log(this.constE);
+
+// ES6 Combine :: Variable and HTML
+const combine = document.querySelector('.combine');
+const title = `ES6 is Awesome`;
+const link = `<a href="#">LINK</a>`
+combine.innerHTML = `<h1>${title}</h1><p>${link}</p>`;
+combine.innerHTML = `
+    <h1>${title}</h1>
+    <p>${link}</p>
+`;
